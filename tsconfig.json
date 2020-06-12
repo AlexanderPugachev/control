@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "build",
+    "module": "esnext",
+    "target": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "sourceMap": true,
+    "allowJs": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "exclude": [
+    "node_modules",
+    "build",
+    "jest",
+    "src/setupTests.ts"
+  ],
+  "include": [
+    "src"
+  ]
+}
