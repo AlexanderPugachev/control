@@ -8,7 +8,7 @@ export const AppHeader = styled.header`
   background: ${p => p.theme.colors.main};
   
   & > :nth-child(1n) {
-    margin: ${p => p.theme.spacing(1, 2)};
+    margin: ${p => p.theme.spacing([1, 2])};
     color: ${p => p.theme.colors.secondary};
   }
 `;

@@ -2,7 +2,7 @@ import 'styled-components';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    spacing: (...params: number[]) => string
+    spacing: (arr: number[]) => string
 
     borderRadius: string
 
