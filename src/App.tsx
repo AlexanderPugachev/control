@@ -1,11 +1,9 @@
 import React from 'react';
-import MainLayout from './layouts/MainLayout/MainLayout';
+import Routes from './routes/Routes';
 
 const App: React.FC = () => {
   return (
-    <MainLayout>
-      Привет
-    </MainLayout>
+    <Routes/>
   );
 };
 

@@ -22,9 +22,14 @@ module.exports = {
         "@typescript-eslint"
     ],
     "rules": {
-        "semi": ["error", "always"],
-        "quotes": ["error", "single"],
-        "indent": ["error", 2],
-        "react/prop-types": [0]
+        // Common
+        "semi": [1, "always"],
+        "quotes": [1, "single"],
+        "indent": [2, 2],
+        // React
+        "react/prop-types": [0],
+        // JSX
+        "react/jsx-sort-props": [1],
+        "react/jsx-max-props-per-line": [1, { maximum: 2 }]
     }
 };

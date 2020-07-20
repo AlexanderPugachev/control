@@ -1,15 +1,18 @@
 import styled from 'styled-components';
+import Button from '../../components/Button/Button';
 
 export const AppHeader = styled.header`
-  width: 100%;
   height: 40px;
-  display: flex;
-  place-items: center;
-  background: ${p => p.theme.colors.main};
+  width: auto;
+  max-width: inherit;
+  overflow-x: scroll;
+  padding: ${p => p.theme.spacing([3, 1])};
   
+  display: flex;
+  align-items: baseline;
+
   & > :nth-child(1n) {
     margin: ${p => p.theme.spacing([1, 2])};
-    color: ${p => p.theme.colors.secondary};
   }
 `;
 
@@ -17,5 +20,17 @@ export const Main = styled.main`
   min-height: 100vh;
   height: 100%;
   width: 100%;
+  max-width: 100vw;
+  overflow-x: scroll;
+  
   background: ${p => p.theme.colors.main};
+`;
+
+interface MenuButtonProps {
+  readonly selected: boolean
+}
+
+export const MenuButton = styled(Button)<MenuButtonProps>`  
+  opacity:     ${p => p.selected ? 1 : .5};
+  font-weight: ${p => p.selected ? 600 : 400};  
 `;

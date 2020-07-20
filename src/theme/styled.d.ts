@@ -9,7 +9,9 @@ declare module 'styled-components' {
     colors: {
       bg: string
       main: string
+      halfMain: string
       secondary: string
+      halfSecondary: string
     }
 
   }

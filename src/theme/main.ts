@@ -7,8 +7,10 @@ export const mainTheme: DefaultTheme = {
   borderRadius: '5px',
 
   colors: {
-    bg: '#12130F',
-    main: '#12130F',
-    secondary: '#5B9279'
+    bg: '#071013',
+    main: '#071013',
+    halfMain: 'rgba(7, 16, 19, .5)',
+    secondary: '#23B5D3',
+    halfSecondary: 'rgba(35, 181, 211, .5)'
   }
 };
