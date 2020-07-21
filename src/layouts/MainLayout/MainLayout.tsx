@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppHeader, Main, MenuButton } from './styles';
+import { AppHeader, Main, MenuButton, Content } from './styles';
 import Text from '../../components/Text/Text';
 import { useHistory, useLocation } from 'react-router-dom';
 import { header } from '../../routes';
@@ -10,7 +10,7 @@ const MainLayout: React.FC = ({ children }) => {
 
   return (
     <Main>
-      <AppHeader>
+      <AppHeader id="app-header">
 
         <Text size={2} strong>Moneysibility</Text>
 
@@ -26,7 +26,9 @@ const MainLayout: React.FC = ({ children }) => {
 
       </AppHeader>
 
-      {children}
+      <Content>
+        {children}
+      </Content>
     </Main>
   );
 };

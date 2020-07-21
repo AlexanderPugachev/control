@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Button from '../../components/Button/Button';
 
 export const AppHeader = styled.header`
-  height: 40px;
+  height: fit-content;
   width: auto;
   max-width: inherit;
   overflow-x: scroll;
@@ -33,4 +33,11 @@ interface MenuButtonProps {
 export const MenuButton = styled(Button)<MenuButtonProps>`  
   opacity:     ${p => p.selected ? 1 : .5};
   font-weight: ${p => p.selected ? 600 : 400};  
+`;
+
+export const Content = styled.div`
+  height: auto;
+  width: 100%;
+  padding: ${p => p.theme.spacing([1])};
+  box-sizing: border-box;
 `;
