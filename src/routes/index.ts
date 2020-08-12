@@ -1,5 +1,6 @@
 import Transactions from '../pages/Transactions/Transactions';
 import Accounts from '../pages/Accounts/Accounts';
+import Auth from '../pages/Auth/Auth';
 
 const transactionsRoute = {
   exact: true,
@@ -15,12 +16,20 @@ const accountsRoute = {
   component: Accounts
 };
 
+const authRoute = {
+  exact: true,
+  key: 'auth',
+  path: '/auth',
+  component: Auth
+};
+
 export const header = [
   transactionsRoute,
   accountsRoute
 ];
 
 export const routes = [
-  ...header
+  ...header,
+  authRoute
 ];
 
