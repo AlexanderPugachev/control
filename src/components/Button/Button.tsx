@@ -18,10 +18,10 @@ const Button: React.FC<Props> = ({
 }) => {
   return (
     <StyledButton
-      onClick={onClick}
-      view={view}
-      size={size}
       disabled={disabled}
+      onClick={onClick}
+      size={size}
+      view={view}
       {...rest}
     > {children} </StyledButton>
   );
