@@ -5,7 +5,7 @@ const state = {
   account: null
 };
 
-export const { actions, reducer: accounts } = createSlice({
+export const { actions, reducer } = createSlice({
   name: 'accounts',
   initialState: state,
   reducers: {

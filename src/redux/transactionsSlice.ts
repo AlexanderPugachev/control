@@ -11,7 +11,7 @@ interface TransactionsInterface {
 
 const state: TransactionsInterface[] = [];
 
-export const { actions, reducer: transactions } = createSlice({
+export const { actions, reducer } = createSlice({
   name: 'transactions',
   initialState: state,
   reducers: {

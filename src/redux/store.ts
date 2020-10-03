@@ -1,6 +1,8 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import { accounts } from './accountsSlice';
-import { transactions } from './transactionsSlice';
+
+import { reducer as accounts } from './accountsSlice';
+import { reducer as transactions } from './transactionsSlice';
+import { reducer as auth } from './authSlice';
 
 const middleware = getDefaultMiddleware({
   immutableCheck: false,
@@ -12,6 +14,7 @@ export const store = configureStore({
   reducer: {
     accounts,
     transactions,
+    auth
   },
   middleware,
   devTools: true

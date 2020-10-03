@@ -5,29 +5,41 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
+import { Accounts, Auth, Transactions } from '../pages';
 import { MainLayout } from '../layouts';
-import { routes } from './index';
 
 export const Routes: React.FC = () => {
+
 
   return (
     <Router>
       <Switch>
-        {routes.map(({ component: Component, key, ...rest }) =>
+        {routes.map(({ comp: Comp, key, ...rest }) =>
           <Route
-            {...rest}
             key={key}
             render={() =>
               <MainLayout>
-                <Component/>
+                <Comp />
               </MainLayout>
             }
+            {...rest}
           />
         )}
-        <Route>
-          <Redirect to="/transactions"/>
-        </Route>
+        <Redirect from="*" to="/transactions"/>
       </Switch>
     </Router>
   );
 };
+
+interface RouteProps {
+  key: string,
+  comp: React.FC,
+  path: string,
+  type?: string
+}
+
+export const routes: RouteProps[] = [
+  { key: 'accounts', comp: Accounts, path: '/accounts', type: 'header' },
+  { key: 'auth', comp: Auth, path: '/auth' },
+  { key: 'transactions', comp: Transactions, path: '/transactions', type: 'header' }
+];
