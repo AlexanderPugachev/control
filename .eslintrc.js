@@ -25,7 +25,7 @@ module.exports = {
     // Common
     'semi': [1, 'always'],
     'quotes': [1, 'single'],
-    'linebreak-style': [1, 'unix'], // LF
+    'linebreak-style': 0,
     'indent': [2, 2],
     // React
     'react/prop-types': [0],

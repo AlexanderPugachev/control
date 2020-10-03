@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import { Component } from './styles';
-import Text from '../../components/Text/Text';
+import { Text } from '../../components';
 
-const Auth: React.FC = () => {
+export const Auth: React.FC = () => {
   const gapi = window.gapi;
 
   useEffect(() => {
-    const _onInit = (auth2: never) => console.log('init OK', auth2);
-    const _onError = (err: never) => console.log('error', err);
+    const _onInit = (auth2: never) => console.info('init OK', auth2);
+    const _onError = (err: never) => console.error('error', err);
 
     gapi.load('auth2', function () {
       gapi.auth2
@@ -29,5 +29,3 @@ const Auth: React.FC = () => {
     </>
   );
 };
-
-export default Auth;

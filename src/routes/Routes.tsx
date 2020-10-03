@@ -5,10 +5,10 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import MainLayout from '../layouts/MainLayout/MainLayout';
+import { MainLayout } from '../layouts/MainLayout/MainLayout';
 import { routes } from './index';
 
-const Routes: React.FC = () => {
+export const Routes: React.FC = () => {
 
   return (
     <Router>
@@ -31,5 +31,3 @@ const Routes: React.FC = () => {
     </Router>
   );
 };
-
-export default Routes;

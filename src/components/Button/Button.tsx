@@ -8,7 +8,7 @@ interface Props {
   disabled?: boolean
 }
 
-const Button: React.FC<Props> = ({
+export const Button: React.FC<Props> = ({
   children,
   disabled,
   onClick,
@@ -26,5 +26,3 @@ const Button: React.FC<Props> = ({
     > {children} </StyledButton>
   );
 };
-
-export default Button;

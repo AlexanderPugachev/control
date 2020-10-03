@@ -1,10 +1,10 @@
 import React from 'react';
 import { AppHeader, MenuButton } from './styles';
-import Text from '../../../components/Text/Text';
+import { Text } from '../../../components';
 import { header } from '../../../routes';
 import { useHistory, useLocation } from 'react-router-dom';
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
   const history = useHistory();
   const { pathname } = useLocation();
   
@@ -47,5 +47,3 @@ const Header: React.FC = () => {
     </AppHeader>
   );
 };
-
-export default Header;

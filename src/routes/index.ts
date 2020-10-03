@@ -1,6 +1,8 @@
-import Transactions from '../pages/Transactions/Transactions';
-import Accounts from '../pages/Accounts/Accounts';
-import Auth from '../pages/Auth/Auth';
+import {
+  Accounts,
+  Auth,
+  Transactions
+} from '../pages';
 
 const transactionsRoute = {
   exact: true,

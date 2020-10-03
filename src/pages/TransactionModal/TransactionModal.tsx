@@ -1,8 +1,7 @@
 import React from 'react';
-import Modal from '../../components/Modal/Modal';
-import Text from '../../components/Text/Text';
+import { Modal, Text } from '../../components';
 
-const TransactionModal: React.FC = () => {
+export const TransactionModal: React.FC = () => {
   return (
     <div>
       <Modal>
@@ -11,5 +10,3 @@ const TransactionModal: React.FC = () => {
     </div>
   );
 };
-
-export default TransactionModal;

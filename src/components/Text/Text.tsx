@@ -7,7 +7,7 @@ interface Props {
   size?: number
 }
 
-const Text: React.FC<Props> = ({
+export const Text: React.FC<Props> = ({
   type = 'default',
   strong,
   size = 1,
@@ -22,5 +22,3 @@ const Text: React.FC<Props> = ({
     >{children}</StyledText>
   );
 };
-
-export default Text;

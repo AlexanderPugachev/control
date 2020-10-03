@@ -1,5 +1,5 @@
 import React from 'react';
-import Routes from './routes/Routes';
+import { Routes } from './routes/Routes';
 import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './reducers/index';
 import { mainTheme } from './theme/main';
@@ -32,7 +32,7 @@ const config: Config = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID ?? ''
 };
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   return (
     <FirebaseAuthProvider firebase={firebase} {...config}>
       <ReduxProvider store={store}>
@@ -43,5 +43,3 @@ const App: React.FC = () => {
     </FirebaseAuthProvider>
   );
 };
-
-export default App;

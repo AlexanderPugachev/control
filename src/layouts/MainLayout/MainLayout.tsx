@@ -1,8 +1,10 @@
 import React from 'react';
 import { Main, Content } from './styles';
-import Header from './Header/Header';
+import { Header } from './Header/Header';
 
-const MainLayout: React.FC = ({ children }) => {
+export const MainLayout: React.FC = ({
+  children
+}) => {
   return (
     <Main>
       <Header/>
@@ -13,5 +15,3 @@ const MainLayout: React.FC = ({ children }) => {
     </Main>
   );
 };
-
-export default MainLayout;

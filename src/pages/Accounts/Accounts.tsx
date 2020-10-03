@@ -1,12 +1,10 @@
 import React from 'react';
-import Text from '../../components/Text/Text';
+import { Text } from '../../components';
 
-const Accounts: React.FC = () => {
+export const Accounts: React.FC = () => {
   return (
     <div>
       <Text>это счета</Text>
     </div>
   );
 };
-
-export default Accounts;
