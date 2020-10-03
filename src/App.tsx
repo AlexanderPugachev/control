@@ -1,16 +1,12 @@
 import React from 'react';
-import { Routes } from './routes/Routes';
-import { configureStore } from '@reduxjs/toolkit';
-import rootReducer from './reducers/index';
-import { mainTheme } from './theme/main';
-import firebase from 'firebase/app';
 import { Provider as ReduxProvider } from 'react-redux';
+import { store } from './redux/store';
 import { ThemeProvider as StyledCompProvider } from 'styled-components';
+import { mainTheme } from './theme/main';
 import { FirebaseAuthProvider } from '@react-firebase/auth';
-
-const store = configureStore({
-  reducer: rootReducer
-});
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import { Routes } from './routes/Routes';
 
 type Config = {
   apiKey: string;
@@ -23,7 +19,7 @@ type Config = {
 }
 
 const config: Config = {
-  apiKey: process.env.REACT_APP_GOOGLE_API_ID ?? '',
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY ?? '',
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN ?? '',
   databaseURL: process.env.REACT_APP_FIREBASE_DB_URL ?? '',
   projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID ?? '',

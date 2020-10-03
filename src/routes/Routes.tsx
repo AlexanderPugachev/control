@@ -5,7 +5,7 @@ import {
   Route,
   Switch
 } from 'react-router-dom';
-import { MainLayout } from '../layouts/MainLayout/MainLayout';
+import { MainLayout } from '../layouts';
 import { routes } from './index';
 
 export const Routes: React.FC = () => {
