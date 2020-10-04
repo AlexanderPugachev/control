@@ -2,8 +2,8 @@ import React from 'react';
 import { LinkButton, PrimaryButton, StyledButton } from './styles';
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  view?: string,
-  size?: string,
+  view?: 'default' | 'primary' | 'link',
+  size?: 'small' | 'default' | 'large',
   disabled?: boolean
 }
 

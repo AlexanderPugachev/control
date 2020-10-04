@@ -1,8 +1,18 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import {
+  combineReducers,
+  configureStore,
+  getDefaultMiddleware
+} from '@reduxjs/toolkit';
 
 import { reducer as accounts } from './accountsSlice';
 import { reducer as transactions } from './transactionsSlice';
 import { reducer as auth } from './authSlice';
+
+const rootReducer = combineReducers({
+  accounts,
+  transactions,
+  auth
+});
 
 const middleware = getDefaultMiddleware({
   immutableCheck: false,
@@ -11,12 +21,11 @@ const middleware = getDefaultMiddleware({
 });
 
 export const store = configureStore({
-  reducer: {
-    accounts,
-    transactions,
-    auth
-  },
+  reducer: rootReducer,
   middleware,
   devTools: true
   // devTools: process.env.NODE_ENV !== 'production',
 });
+
+export type RootState = ReturnType<typeof rootReducer>
+export type AppDispatch = typeof store.dispatch

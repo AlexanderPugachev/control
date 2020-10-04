@@ -1,18 +1,11 @@
 import React  from 'react';
 import { Component } from './styles';
 import { Text, Button } from '../../components';
-import firebase from 'firebase/app';
-import 'firebase/auth';
+import { useDispatch } from 'react-redux';
+import { login, logout } from '../../api/auth';
 
 export const Auth: React.FC = () => {
-
-  const signIn = async () => {
-
-  };
-
-  const signOut = () => {
-    firebase.auth().signOut();
-  };
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -20,11 +13,11 @@ export const Auth: React.FC = () => {
         <Text>Sign in with Google for save your progress</Text>
 
         <Button
-          onClick={signIn}
+          onClick={() => dispatch(login())}
         >Sign In with Google</Button>
 
         <Button
-          onClick={signOut}
+          onClick={() => dispatch(logout())}
         >Sign Out</Button>
 
       </Component>
