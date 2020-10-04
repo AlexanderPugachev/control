@@ -19,6 +19,9 @@ export const { actions, reducer } = createSlice({
       s.user = state.user;
       s.additional = state.additional;
       s.credential = state.credential;
+    },
+    setCurrentUser: (s, { payload }) => {
+      s.user = payload;
     }
   }
 });

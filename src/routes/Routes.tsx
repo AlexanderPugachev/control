@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Redirect,
@@ -7,9 +7,19 @@ import {
 } from 'react-router-dom';
 import { Accounts, Auth, Transactions } from '../pages';
 import { MainLayout } from '../layouts';
+import * as authActions from '../api/auth';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../redux/store';
 
 export const Routes: React.FC = () => {
+  const dispatch = useDispatch();
+  const { user } = useSelector((s: RootState) => s.auth);
 
+  // check on app start
+  useEffect(() => {
+    console.log('user', user);
+    if (!user) dispatch(authActions.currentUser());
+  }, [dispatch, user]);
 
   return (
     <Router>

@@ -1,11 +1,13 @@
 import React  from 'react';
 import { Component } from './styles';
 import { Text, Button } from '../../components';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { login, logout } from '../../api/auth';
+import { RootState } from '../../redux/store';
 
 export const Auth: React.FC = () => {
   const dispatch = useDispatch();
+  const { user: uuser } = useSelector((s: RootState) => s.auth);
 
   return (
     <>
