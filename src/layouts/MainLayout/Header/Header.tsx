@@ -8,10 +8,6 @@ export const Header: React.FC = () => {
   const history = useHistory();
   const { pathname } = useLocation();
   
-  const handleLogout = () => {
-    console.log('It\'s logout');
-  };
-  
   return (
     <AppHeader id="app-header">
 
@@ -28,23 +24,6 @@ export const Header: React.FC = () => {
             view="link"
           >{key[0].toUpperCase() + key.slice(1)}</MenuButton>
         )}
-
-      {pathname !== '/auth'
-        ?
-        <MenuButton
-          onClick={() => history.push('/auth')}
-          selected={pathname === '/auth'}
-          size='small'
-          view='link'
-        >Login</MenuButton>
-        :
-        <MenuButton
-          onClick={handleLogout}
-          selected
-          size='small'
-          view='link'
-        >Logout</MenuButton>
-      }
 
     </AppHeader>
   );
