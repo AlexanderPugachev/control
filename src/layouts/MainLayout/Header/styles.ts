@@ -7,7 +7,7 @@ export const AppHeader = styled.header`
   max-width: inherit;
   overflow-x: scroll;
   padding: ${p => p.theme.spacing([3, 1])};
-  
+
   display: flex;
   align-items: baseline;
 
@@ -16,10 +16,10 @@ export const AppHeader = styled.header`
   }
 `;
 interface MenuButtonProps {
-  readonly selected: boolean
+  readonly selected: boolean;
 }
 
-export const MenuButton = styled(Button)<MenuButtonProps>`  
-  opacity:     ${p => p.selected ? 1 : .5};
-  font-weight: ${p => p.selected ? 600 : 400};  
+export const MenuButton = styled(Button)<MenuButtonProps>`
+  opacity: ${p => (p.selected ? 1 : 0.5)};
+  font-weight: ${p => (p.selected ? 600 : 400)};
 `;

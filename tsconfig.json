@@ -9,10 +9,6 @@
       "dom.iterable",
       "esnext"
     ],
-    "types": [
-      "gapi",
-      "gapi.auth2"
-    ],
     "sourceMap": true,
     "allowJs": true,
     "jsx": "react",
@@ -29,7 +25,8 @@
     "resolveJsonModule": true,
     "noEmit": true,
     "allowSyntheticDefaultImports": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "noFallthroughCasesInSwitch": true
   },
   "exclude": [
     "node_modules",

@@ -11,13 +11,9 @@ export const Transactions: React.FC = () => {
       <Component>
         <Text>Это транзакции</Text>
 
-        <Button
-          onClick={() => setOpenAdd(true)}
-        >Write transactions</Button>
+        <Button onClick={() => setOpenAdd(true)}>Write transactions</Button>
 
-        {openAdd &&
-        <TransactionModal/>
-        }
+        {openAdd && <TransactionModal />}
       </Component>
     </>
   );

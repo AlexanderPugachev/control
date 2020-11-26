@@ -1,14 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const state = {
+type State = {
+  user: null | string;
+  additional: null | string;
+  credential: null | string;
+};
+
+const initialState: State = {
   user: null,
   additional: null,
-  credential: null
+  credential: null,
 };
 
 export const { actions, reducer } = createSlice({
   name: 'auth',
-  initialState: state,
+  initialState,
   reducers: {
     setAuthInfo: (s, { payload }) => {
       s.user = payload.user;
@@ -16,12 +22,12 @@ export const { actions, reducer } = createSlice({
       s.credential = payload.credential;
     },
     clearAuthInfo: s => {
-      s.user = state.user;
-      s.additional = state.additional;
-      s.credential = state.credential;
+      s.user = initialState.user;
+      s.additional = initialState.additional;
+      s.credential = initialState.credential;
     },
     setCurrentUser: (s, { payload }) => {
       s.user = payload;
-    }
-  }
+    },
+  },
 });

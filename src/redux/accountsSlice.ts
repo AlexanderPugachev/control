@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const state = {
   list: null,
-  account: null
+  account: null,
 };
 
 export const { actions, reducer } = createSlice({
@@ -20,6 +20,6 @@ export const { actions, reducer } = createSlice({
     },
     clearAccount: s => {
       s.account = state.account;
-    }
-  }
+    },
+  },
 });

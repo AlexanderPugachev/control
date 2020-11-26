@@ -6,7 +6,7 @@ export const Main = styled.main`
   width: 100%;
   max-width: 100vw;
   overflow-x: scroll;
-  
+
   background: ${p => p.theme.colors.main};
 `;
 
