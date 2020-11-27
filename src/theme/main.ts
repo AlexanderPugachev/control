@@ -1,6 +1,18 @@
-import { DefaultTheme } from 'styled-components';
+interface Theme {
+  spacing: (arr: number[]) => string;
 
-export const mainTheme: DefaultTheme = {
+  borderRadius: string;
+
+  colors: {
+    bg: string;
+    main: string;
+    halfMain: string;
+    secondary: string;
+    halfSecondary: string;
+  };
+}
+
+export const mainTheme: Theme = {
   spacing: arr => arr.reduce((res, el) => `${res}${el * 4}px `, ''),
 
   borderRadius: '5px',
