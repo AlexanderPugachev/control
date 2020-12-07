@@ -1,3 +1,3 @@
 export { Accounts } from './Accounts/Accounts';
-export { Transactions } from './Transactions/Transactions';
+export { Actions } from './Actions/Actions';
 export { TransactionModal } from './TransactionModal/TransactionModal';

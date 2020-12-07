@@ -17,14 +17,18 @@ export const StyledButton = styled.button<ButtonProps>`
   background: ${p => p.theme.colors.halfMain};
   padding: ${p => p.theme.spacing(p.padding ?? [2])};
   margin: ${p => p.theme.spacing(p.margin ?? [2, 3])};
+  
+  &:focus {
+    outline: 0;
+  }
 `;
 
-export const PrimaryButton = styled(StyledButton)<ButtonProps>`
+export const PrimaryButton = styled(StyledButton)`
   border: 1px solid ${p => p.theme.colors.halfMain};
   background: ${p => p.theme.colors.halfMain};
 `;
 
-export const LinkButton = styled(StyledButton)<ButtonProps>`
+export const LinkButton = styled(StyledButton)`
   border: none;
   background: none;
 `;

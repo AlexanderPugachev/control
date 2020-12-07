@@ -5,12 +5,12 @@ import {
 } from '@reduxjs/toolkit';
 
 import { reducer as accounts } from './accountsSlice';
-import { reducer as transactions } from './transactionsSlice';
+import actions from './actionsSlice';
 import { reducer as auth } from './authSlice';
 
 const rootReducer = combineReducers({
   accounts,
-  transactions,
+  actions,
   auth,
 });
 

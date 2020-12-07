@@ -5,7 +5,7 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import { Accounts, Transactions } from '../pages';
+import { Accounts, Actions } from '../pages';
 import { MainLayout } from '../layouts';
 
 interface RouteProps {
@@ -19,7 +19,7 @@ export const routes: RouteProps[] = [
   { key: 'accounts', comp: Accounts, path: '/accounts', type: 'header' },
   {
     key: 'transactions',
-    comp: Transactions,
+    comp: Actions,
     path: '/transactions',
     type: 'header',
   },

@@ -8,6 +8,7 @@ export const Main = styled.main`
   overflow-x: scroll;
 
   background: ${p => p.theme.colors.main};
+  color: ${p => p.theme.colors.secondary};
 `;
 
 export const Content = styled.div`

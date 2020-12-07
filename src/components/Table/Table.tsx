@@ -1,45 +1,55 @@
 import React, { FC } from 'react';
 import { Container, HeadItem } from './styles';
+import type { ActionsInterface } from '../../redux/actionsSlice';
 
 interface ColumnItem {
-  title: string,
-  dataName: string,
-  key: string,
-  render?: (item: string, record: Record<string, unknown>) => FC | string
+  title: string;
+  dataName: keyof ActionsInterface;
+  key: string;
+  render?: (item: string | number, record: ActionsInterface) => FC | string;
 }
 
-interface Props {
+type PropsType = {
   columns: ColumnItem[];
-  borderless: boolean;
-  rowKey: string;
-  data: Record<string, string>[];
-  headless: boolean;
+  data: ActionsInterface[];
+  rowKey?: keyof ActionsInterface;
+  borderless?: boolean;
+  headless?: boolean;
 }
 
-export const Table: FC<Props> = ({ columns = [], data, rowKey = 'key', borderless = false, headless = false }) => {
+export const Table: FC<PropsType> = ({
+  columns = [],
+  data,
+  rowKey = 'id',
+  borderless = false,
+  headless = false,
+}) => {
+
   return (
     <Container borderless={borderless}>
-      {!headless && <thead>
-      <tr>
-        {columns.map(item =>
-          <HeadItem
-            key={item.key}
-          >{item.title}</HeadItem>,
-        )}
-      </tr>
-      </thead>}
+      {!headless && (
+        <thead>
+          <tr>
+            {columns.map(item => (
+              <HeadItem key={item.key}>{item.title}</HeadItem>
+            ))}
+          </tr>
+        </thead>
+      )}
       <tbody>
-      {data?.map(item =>
-        <tr key={item[rowKey]}>
-          {columns.map(({ dataName, key, render }) => dataName in item
-            ?
-            <td key={key}>
-              {render ? render(item[dataName], item) : item[dataName]}
-            </td>
-            : <td key={key} />,
-          )}
-        </tr>,
-      ) ?? 'Empty data'}
+        {data?.map((item) => (
+          <tr key={item[rowKey]}>
+            {columns.map(({ dataName, key, render }) =>
+              dataName in item ? (
+                <td key={key}>
+                  {render ? render(item[dataName], item) : item[dataName]}
+                </td>
+              ) : (
+                <td key={key} />
+              )
+            )}
+          </tr>
+        )) ?? 'Empty data'}
       </tbody>
     </Container>
   );
