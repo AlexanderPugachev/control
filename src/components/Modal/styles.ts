@@ -11,6 +11,7 @@ export const Container = styled.div<ContainerProps>`
   left: 0;
   right: 0;
   //top: ${p => p.top}px;
+  min-height: 50vh;
   box-sizing: border-box;
   z-index: ${p => p.theme.zIndexes.modals};
 

@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+import { Control, FieldErrors } from 'react-hook-form';
 import { Input } from '..';
 import { InputType } from '../Input/Input';
 import { StyledForm } from './styles';
@@ -6,8 +7,8 @@ import { StyledForm } from './styles';
 interface FormType extends React.FormHTMLAttributes<HTMLFormElement> {
   align?: string;
   formData?: {
-    control: any,
-    errors: any,
+    control: Control,
+    errors: FieldErrors,
     content: InputType[]
   }
 }

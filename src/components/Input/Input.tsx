@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
-import { Controller } from 'react-hook-form';
+import { Control, Controller } from 'react-hook-form';
 import { StyledInput } from './styles';
 
 export interface InputType extends React.InputHTMLAttributes<HTMLInputElement> {
-  readonly control?: any
+  readonly control?: Control
   readonly name: string
   readonly rules?: any
   readonly error?: any
@@ -11,7 +11,7 @@ export interface InputType extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 export const Input: FC<InputType> = ({
-                                       control = null,
+                                       control,
                                        name,
                                        defaultValue = '',
                                        rules,
