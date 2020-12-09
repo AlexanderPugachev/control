@@ -1,18 +1,18 @@
 import React, { FC } from 'react';
 import { Container, HeadItem } from './styles';
-import type { ActionsInterface } from '../../redux/actionsSlice';
+import type { ActionsType } from '../../redux/actionsSlice';
 
-interface ColumnItem {
-  title: string;
-  dataName: keyof ActionsInterface;
-  key: string;
-  render?: (item: string | number, record: ActionsInterface) => FC | string;
+export type ColumnItemType = {
+  title: string
+  dataName: keyof ActionsType
+  key: string
+  render?: (item: string | number, record: ActionsType) => FC | string
 }
 
 type PropsType = {
-  columns: ColumnItem[];
-  data: ActionsInterface[];
-  rowKey?: keyof ActionsInterface;
+  columns: ColumnItemType[];
+  data: ActionsType[];
+  rowKey?: keyof ActionsType;
   borderless?: boolean;
   headless?: boolean;
 }

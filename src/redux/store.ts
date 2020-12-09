@@ -24,7 +24,6 @@ export const store = configureStore({
   reducer: rootReducer,
   middleware,
   devTools: true,
-  // devTools: process.env.NODE_ENV !== 'production',
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

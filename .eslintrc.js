@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     'airbnb',
     'airbnb/hooks',
+    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
     'prettier/@typescript-eslint',
@@ -29,12 +30,14 @@ module.exports = {
       2,
       { props: true, ignorePropertyModificationsFor: ['s'] },
     ],
-    'no-console': ['error', { allow: ['warn', 'error', 'info'] }],
+    'no-console': ['warn', { allow: ['warn', 'error', 'info'] }],
     // React
     'react/prop-types': [0],
     // JSX
     'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
     'react/jsx-props-no-spreading': [0],
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars-experimental": "error",
   },
   settings: {
     'import/resolver': {

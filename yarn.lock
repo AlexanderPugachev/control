@@ -9684,6 +9684,11 @@ react-hook-form@^6.0.8:
   resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-6.9.0.tgz#e3fb510970cdf1fbab4e1095cc7e6e2a97935643"
   integrity sha512-QLRUYI+vZfoFu4mF2CaKeq5tHgLvTe+H2ks3iVKaG07D9nnbV/pemWkg93ODb0l4kFsRb28Ti3s/1K1DHi8Z0g==
 
+react-indexed-db@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/react-indexed-db/-/react-indexed-db-1.0.12.tgz#b8c6c4752a28eb2c6335b6b3289efc8262d119ae"
+  integrity sha512-39UY97QvH0BXke1dOa1jUIihjMSs5v4jMcUDZ3HBRKGr2kn6gnH5+7I0Px5Np9W8bomD7XTIXpCKVNrtKFQTIQ==
+
 react-is@^16.12.0, react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.9.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"

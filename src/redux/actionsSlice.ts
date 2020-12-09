@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import * as thunks from '../thunks/actionsThunks';
+import { actionsThunks as thunks } from '../thunks/actionsThunks';
 
-export type ActionsInterface = {
+export type ActionsType = {
   id: string
   type: string
   sum: number
@@ -12,7 +12,7 @@ export type ActionsInterface = {
 }
 
 type State = {
-  data: ActionsInterface[]
+  data: ActionsType[]
 };
 
 const initialState: State = {
@@ -25,17 +25,17 @@ const { actions, reducer } = createSlice({
   reducers: {
     clearList: s => {
       s.data = initialState.data;
-    }
+    },
   },
   extraReducers: builder => {
     builder.addCase(thunks.getList.fulfilled, (s, action) => {
       s.data = action.payload;
-    })
-  }
+    });
+  },
 });
 
 export const actionsActions = {
-  clearList: actions.clearList
+  clearList: actions.clearList,
 };
 
 export default reducer;
