@@ -1,9 +1,14 @@
 import styled from 'styled-components';
 
-export const StyledForm = styled.form`
+type StyledFormType = {
+  align?: string;
+}
+
+export const StyledForm = styled.form<StyledFormType>`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: ${p => p.align ?? 'left'};
+  box-sizing: border-box;
   
   width: 100%;
   padding: ${p => p.theme.spacing([1])};

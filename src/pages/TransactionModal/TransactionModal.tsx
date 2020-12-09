@@ -34,7 +34,7 @@ export const TransactionModal: React.FC = () => {
   ];
 
   return (
-    <Modal>
+    <Modal title="New income/outcome">
       <Form formData={{ control, errors, content }} onSubmit={onSubmit}>
         <Button type="submit">Отправить</Button>
       </Form>

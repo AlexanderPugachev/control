@@ -6,9 +6,7 @@ export const StyledInput = styled.input<React.InputHTMLAttributes<HTMLInputEleme
   background: none;
   border: none;
   outline: none;
-  font-size: ${p => p.theme.fontSizes.xl};
-  color: ${p => p.theme.colors.secondary};
-
+  ${p => p.theme.fonts.h1};
   
   &&:-webkit-autofill,
   :-webkit-autofill:hover,

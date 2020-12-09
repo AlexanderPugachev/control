@@ -1,9 +1,29 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
-import ModalWindow from './ModalWindow/ModalWindow';
+import { ModalContent, ModalTitle, Container } from './styles';
 
 const modalRoot = document.getElementById('modal-root') as HTMLElement;
 
-export const Modal: React.FC = ({ children }) => {
-  return createPortal(<ModalWindow>{children}</ModalWindow>, modalRoot);
+type ModalType = {
+  title?: string
+}
+
+export const Modal: React.FC<ModalType> = (
+  {
+    children,
+    title,
+  },
+) => {
+  const headerHeight = document.getElementById('app-header')
+    ?.offsetHeight || 30;
+
+  return createPortal(
+    <Container top={headerHeight}>
+
+      {title && <ModalTitle>{title}</ModalTitle>}
+
+      <ModalContent>{children}</ModalContent>
+
+    </Container>,
+    modalRoot);
 };

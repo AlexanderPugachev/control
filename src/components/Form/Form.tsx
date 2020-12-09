@@ -4,6 +4,7 @@ import { InputType } from '../Input/Input';
 import { StyledForm } from './styles';
 
 interface FormType extends React.FormHTMLAttributes<HTMLFormElement> {
+  align?: string;
   formData?: {
     control: any,
     errors: any,
@@ -11,9 +12,16 @@ interface FormType extends React.FormHTMLAttributes<HTMLFormElement> {
   }
 }
 
-export const Form: FC<FormType> = ({ onSubmit, children, formData}) => {
+export const Form: FC<FormType> = (
+  {
+    onSubmit,
+    children,
+    formData,
+    align,
+  },
+) => {
   return (
-    <StyledForm onSubmit={onSubmit}>
+    <StyledForm align={align} onSubmit={onSubmit}>
       {formData && formData.content.map(({ name, ...rest }) => (
         <Input
           {...rest}
