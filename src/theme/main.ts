@@ -3,13 +3,8 @@ interface Theme {
 
   borderRadius: string;
 
-  colors: {
-    bg: string;
-    main: string;
-    halfMain: string;
-    secondary: string;
-    halfSecondary: string;
-  };
+  colors: { [val: string]: string };
+  fontSizes: { [val: string]: string }
 }
 
 export const mainTheme: Theme = {
@@ -24,4 +19,12 @@ export const mainTheme: Theme = {
     secondary: '#23B5D3',
     halfSecondary: 'rgba(35, 181, 211, .5)',
   },
+
+  fontSizes: {
+    xs: '14px',
+    s: '16px',
+    m: '18px',
+    l: '20px',
+    xl: '22px',
+  }
 };

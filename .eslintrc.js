@@ -31,8 +31,10 @@ module.exports = {
       { props: true, ignorePropertyModificationsFor: ['s'] },
     ],
     'no-console': ['warn', { allow: ['warn', 'error', 'info'] }],
+    'no-plusplus': [0],
     // React
     'react/prop-types': [0],
+    "react/jsx-sort-props": [1],
     // JSX
     'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
     'react/jsx-props-no-spreading': [0],

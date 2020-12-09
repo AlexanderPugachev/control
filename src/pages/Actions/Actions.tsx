@@ -1,24 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useIndexedDB } from 'react-indexed-db';
 import { Component } from './styles';
 import { Button, Table } from '../../components';
 import { TransactionModal } from '..';
-import { actionsThunks } from '../../thunks/actionsThunks';
 import type { ColumnItemType } from '../../components/Table/Table';
-import type { RootState } from '../../redux/store';
-import { actionsActions } from '../../redux';
+import { ActionsType } from '../../redux/actionsSlice';
 
 export const Actions: React.FC = () => {
-  const dispatch = useDispatch();
   const [openAdd, setOpenAdd] = useState(false);
-  const { data } = useSelector((s: RootState) => s.actions);
+  const { getAll } = useIndexedDB('actions');
+  const [data, setData] = useState<ActionsType[]>([]);
 
   useEffect(() => {
-    dispatch(actionsThunks.getList());
-    return () => {
-      dispatch(actionsActions.clearList())
-    }
-  }, [dispatch]);
+    getAll().then((res: ActionsType[]) => setData(res));
+  }, [getAll]);
 
   const getType = (type: string) => type === 'plus' ? '+' : '-';
 
@@ -40,9 +35,9 @@ export const Actions: React.FC = () => {
   return (
     <Component>
       <Table
+        borderless
         columns={columns}
         data={data}
-        borderless
       />
 
       <Button onClick={() => setOpenAdd(true)}>Add</Button>
