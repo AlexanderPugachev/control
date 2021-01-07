@@ -34,6 +34,7 @@ module.exports = {
     'no-plusplus': [0],
     // React
     'react/prop-types': [0],
+    'react/require-default-props': [0],
     "react/jsx-sort-props": [1],
     // JSX
     'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],

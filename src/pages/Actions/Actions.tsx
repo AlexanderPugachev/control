@@ -17,7 +17,7 @@ export const Actions: React.FC = () => {
 
   const getType = (type: string) => type === 'plus' ? '+' : '-';
 
-  const columns: ColumnItemType[] = [
+  const columns: ColumnItemType<ActionsType>[] = [
     {
       title: 'sum',
       dataName: 'sum',
@@ -34,7 +34,7 @@ export const Actions: React.FC = () => {
 
   return (
     <Component>
-      <Table
+      <Table<ActionsType>
         borderless
         columns={columns}
         data={data}
