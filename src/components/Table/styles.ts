@@ -9,10 +9,17 @@ export const Container = styled.table<TableProps>`
   width: 100%;
   box-sizing: border-box;
   border: ${p => (p.borderless ? 0 : `1px solid ${p.theme.colors.halfSecondary}`)};
+  
+  & tr th {
+    border-bottom: ${(p) => (p.borderless ? 0 : `1px solid ${p.theme.colors.halfSecondary}`)};
+  }
+  & tr:not(:last-child) td {
+    border-bottom: ${(p) => (p.borderless ? 0 : `1px solid ${p.theme.colors.halfSecondary}`)};
+  }
 
-  & tr:not(:last-child) td,th {
-    border-bottom: ${p =>
-      p.borderless ? 0 : `1px solid ${p.theme.colors.halfSecondary}`};
+  & td,
+  th {
+    padding: ${(p) => p.theme.spaces.m};
   }
   
 `;
