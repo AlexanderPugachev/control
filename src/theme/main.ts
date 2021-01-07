@@ -1,3 +1,5 @@
+import { animations } from './animations';
+
 type spacingType = (arr: number[], multiplier?: number) => string;
 
 const spacing: spacingType = (arr, multiplier = 4) =>
@@ -30,6 +32,7 @@ export const mainTheme = {
   colors,
   sizes,
   zIndex,
+  animations,
 
   fonts: {
     h1: {

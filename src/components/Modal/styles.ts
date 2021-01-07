@@ -14,6 +14,7 @@ export const Container = styled.div`
   border-top: 4px double ${p => p.theme.colors.option};
   border-radius: 2% 2% 0 0;
   color: white;
+  animation: 500ms ${p => p.theme.animations.fadeInUp};
   
   // children
   display: flex;
