@@ -4,14 +4,16 @@ import {
   getDefaultMiddleware,
 } from '@reduxjs/toolkit';
 
-import { reducer as accounts } from './accountsSlice';
-import actions from './actionsSlice';
-import { reducer as auth } from './authSlice';
+import { reducer as accounts } from './slices/accountsSlice';
+import actions from './slices/actionsSlice';
+import { reducer as auth } from './slices/authSlice';
+import common from './slices/commonSlice';
 
 const rootReducer = combineReducers({
   accounts,
   actions,
   auth,
+  common
 });
 
 const middleware = getDefaultMiddleware({

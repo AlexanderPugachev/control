@@ -1,29 +1,36 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
-import { ModalContent, ModalTitle, Container } from './styles';
+import { useDispatch } from 'react-redux';
+import { ModalContent, ModalTitle, Container, ModalWrap } from './styles';
+import { commonActions } from '../../redux';
 
 const modalRoot = document.getElementById('modal-root') as HTMLElement;
 
 type ModalType = {
   title?: string
+  modalId: number
 }
 
 export const Modal: React.FC<ModalType> = (
   {
     children,
     title,
+    modalId
   },
 ) => {
-  const headerHeight = document.getElementById('app-header')
-    ?.offsetHeight || 30;
+  const dispatch = useDispatch();
+
+  const closeDrawer = () => {
+    dispatch(commonActions.setModal({ visible: false, modalId }));
+  };
 
   return createPortal(
-    <Container top={headerHeight}>
-
+    <Container>
       {title && <ModalTitle>{title}</ModalTitle>}
 
       <ModalContent>{children}</ModalContent>
 
+      <ModalWrap onClick={closeDrawer} />
     </Container>,
     modalRoot);
 };

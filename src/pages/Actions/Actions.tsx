@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { useIndexedDB } from 'react-indexed-db';
+import { useDispatch, useSelector } from 'react-redux';
 import { Component } from './styles';
 import { Button, Table } from '../../components';
 import { TransactionModal } from '..';
 import type { ColumnItemType } from '../../components/Table/Table';
-import { ActionsType } from '../../redux/actionsSlice';
+import { ActionsType } from '../../redux/slices/actionsSlice';
+import { RootState } from '../../redux/store';
+import { commonActions, ModalsId } from '../../redux/slices/commonSlice';
 
 export const Actions: React.FC = () => {
-  const [openAdd, setOpenAdd] = useState(false);
+  const dispatch = useDispatch();
+  const { [ModalsId.AddAction]: modal } = useSelector((s: RootState) => s.common.modals);
   const { getAll } = useIndexedDB('actions');
   const [data, setData] = useState<ActionsType[]>([]);
 
@@ -23,7 +27,7 @@ export const Actions: React.FC = () => {
       dataName: 'sum',
       key: 'sum',
       render: (text, record) =>
-        `${getType(record.type)}${text}`
+        `${getType(record.type)}${text}`,
     },
     {
       title: 'category',
@@ -31,6 +35,10 @@ export const Actions: React.FC = () => {
       key: 'category',
     },
   ];
+
+  const toggleDrawer = (bool: boolean) => {
+    dispatch(commonActions.setModal({ visible: bool, modalId: ModalsId.AddAction }));
+  };
 
   return (
     <Component>
@@ -40,9 +48,9 @@ export const Actions: React.FC = () => {
         data={data}
       />
 
-      <Button onClick={() => setOpenAdd(true)}>Add</Button>
+      <Button onClick={() => toggleDrawer(true)}>Add</Button>
 
-      {openAdd && <TransactionModal />}
+      {modal?.visible && <TransactionModal />}
     </Component>
   );
 };

@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ActionsType } from '../redux/actionsSlice';
+import { ActionsType } from '../slices/actionsSlice';
 
 const list = [
   { id: '1', type: 'plus', sum: 200, category: 'salary' },

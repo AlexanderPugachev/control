@@ -19,7 +19,7 @@ const sizes = {
   xl: '22px',
 };
 
-const zIndexes = {
+const zIndex = {
   bg: 0,
   modalsWrap: 490,
   modals: 500
@@ -29,7 +29,7 @@ export const mainTheme = {
   spacing,
   colors,
   sizes,
-  zIndexes,
+  zIndex,
 
   fonts: {
     h1: {

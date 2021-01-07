@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Button, Modal, Form } from '../../components';
+import { ModalsId } from '../../redux/slices/commonSlice';
 
 export const TransactionModal: React.FC = () => {
   const { handleSubmit, control, errors } = useForm({ mode: 'onBlur' });
@@ -34,7 +35,7 @@ export const TransactionModal: React.FC = () => {
   ];
 
   return (
-    <Modal title="New income/outcome">
+    <Modal modalId={ModalsId.AddAction} title="New income/outcome">
       <Form formData={{ control, errors, content }} onSubmit={onSubmit}>
         <Button type="submit">Отправить</Button>
       </Form>
