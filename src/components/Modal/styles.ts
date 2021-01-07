@@ -17,7 +17,7 @@ export const Container = styled.div<ContainerProps>`
 
   // style
   background-color: ${p => p.theme.colors.main};
-  border-top: 4px double ${p => p.theme.colors.secondary};
+  border-top: 4px double ${p => p.theme.colors.option};
   border-radius: 2% 2% 0 0;
   color: white;
   

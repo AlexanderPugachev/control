@@ -16,7 +16,7 @@ export const StyledInput = styled.input<React.InputHTMLAttributes<HTMLInputEleme
   }
     
   &::placeholder {
-    color: ${p => getRGBAFromHEX(p.theme.colors.secondary, .5)};
+    color: ${p => getRGBAFromHEX(p.theme.colors.option, .5)};
   }
   
   &:focus, :active {

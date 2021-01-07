@@ -10,11 +10,11 @@ interface ButtonProps {
 
 export const StyledButton = styled.button<ButtonProps>`
   width: fit-content;
-  color: ${p => p.theme.colors.secondary};
+  color: ${p => p.theme.colors.option};
   opacity: ${p => (p.disabled ? 0.5 : 1)};
 
-  border: 1px solid ${p => p.theme.colors.secondary};
-  background: ${p => p.theme.colors.halfMain};
+  border: 1px solid ${p => p.theme.colors.option};
+  background: ${p => p.theme.colors.main2};
   padding: ${p => p.theme.spacing(p.padding ?? [2])};
   margin: ${p => p.theme.spacing(p.margin ?? [2, 3])};
   
@@ -24,8 +24,8 @@ export const StyledButton = styled.button<ButtonProps>`
 `;
 
 export const PrimaryButton = styled(StyledButton)`
-  border: 1px solid ${p => p.theme.colors.halfMain};
-  background: ${p => p.theme.colors.halfMain};
+  border: 1px solid ${p => p.theme.colors.main2};
+  background: ${p => p.theme.colors.main2};
 `;
 
 export const LinkButton = styled(StyledButton)`

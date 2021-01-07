@@ -9,5 +9,5 @@ interface StyledTextProps {
 export const StyledText = styled.p<StyledTextProps>`
   margin: 0;
   font-weight: ${p => (p.strong ? 600 : 400)};
-  color: ${p => p.theme.colors.secondary};
+  color: ${p => p.theme.colors.option};
 `;
