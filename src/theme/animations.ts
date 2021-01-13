@@ -20,4 +20,11 @@ export const animations = {
       transform: translate3d(0, 100%, 0);
     }    
   `,
+  flash: keyframes`
+    from { opacity: 1 }
+    25% { opacity: 0 }
+    50% { opacity: 1 }
+    75% { opacity: 0 }
+    to { opacity: 1 }
+  `,
 };
